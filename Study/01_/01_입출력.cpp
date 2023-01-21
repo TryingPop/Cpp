@@ -1,9 +1,16 @@
-﻿// 연습용_001.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
-//
-
-#include <iostream>		// 기본 입출력 시스템을 담은 헤더
+﻿#include <iostream>		// 기본 입출력 시스템을 담은 헤더
 using namespace std;	// cin, cout을 간단하게 치기위해 앞에 선언
+
 /*
+
+날짜 : 2023. 1. 21
+이름 : 배성훈
+내용 : 입출력
+	iostream 해더의
+	std.cin 입력관리 
+	std.cout 출력관리
+*/
+
 int main()
 {
 
@@ -20,4 +27,3 @@ int main()
 	//입력한 문자를 보여준다
 	cout << "입력하신 문자는 " << inputStr << "입니다.";
 }
-*/
