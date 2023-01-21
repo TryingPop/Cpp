@@ -7,8 +7,8 @@ using namespace std;	// cin, cout을 간단하게 치기위해 앞에 선언
 이름 : 배성훈
 내용 : 입출력
 	iostream 해더의
-	std.cin 입력관리 
-	std.cout 출력관리
+	std::cin 입력관리 
+	std::cout 출력관리
 */
 
 int main()
