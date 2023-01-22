@@ -1,27 +1,27 @@
 /*
-³¯Â¥ : 2023. 1. 22
-ÀÌ¸§ : ¹è¼ºÈÆ
-³»¿ë : ±³Àç 43p ¹®Á¦1
-	±³Àç 40pÀÇ ¿¹Á¦ NameSp2.cpp¸¦ ´ÙÀ½°ú °°ÀÌ ÃÑ 3°³ÀÇ ÆÄÀÏ·Î ºÐÇÒÇØ¼­ ÄÄÆÄÀÏ ÇØº¸ÀÚ.
-	Çì´õÆÄÀÏ main ÇÔ¼ö¸¦ Á¦¿ÜÇÑ ³ª¸ÓÁö µÎ ÇÔ¼öÀÇ ¼±¾ðÀ» »ðÀÔÇÑ´Ù.
-	¼Ò½ºÆÄÀÏ1 main ÇÔ¼ö¸¦ Á¦¿ÜÇÑ ³ª¸ÓÁö µÎ ÇÔ¼öÀÇ Á¤ÀÇ¸¦ »ðÀÔÇÑ´Ù.
-	¼Ò½ºÆÄÀÏ2 main ÇÔ¼ö¸¸ »ðÀÔÇÑ´Ù.
+ë‚ ì§œ : 2023. 1. 22
+ì´ë¦„ : ë°°ì„±í›ˆ
+ë‚´ìš© : êµìž¬ 43p ë¬¸ì œ1
+	êµìž¬ 40pì˜ ì˜ˆì œ NameSp2.cppë¥¼ ë‹¤ìŒê³¼ ê°™ì´ ì´ 3ê°œì˜ íŒŒì¼ë¡œ ë¶„í• í•´ì„œ ì»´íŒŒì¼ í•´ë³´ìž.
+	í—¤ë”íŒŒì¼ main í•¨ìˆ˜ë¥¼ ì œì™¸í•œ ë‚˜ë¨¸ì§€ ë‘ í•¨ìˆ˜ì˜ ì„ ì–¸ì„ ì‚½ìž…í•œë‹¤.
+	ì†ŒìŠ¤íŒŒì¼1 main í•¨ìˆ˜ë¥¼ ì œì™¸í•œ ë‚˜ë¨¸ì§€ ë‘ í•¨ìˆ˜ì˜ ì •ì˜ë¥¼ ì‚½ìž…í•œë‹¤.
+	ì†ŒìŠ¤íŒŒì¼2 main í•¨ìˆ˜ë§Œ ì‚½ìž…í•œë‹¤.
 
-	ÆÄÀÏÀÇ ÀÌ¸§Àº ¿©·¯ºÐÀÌ ÀÓÀÇ·Î Á¤ÇØµµ µÈ´Ù.
-	ÇÏÁö¸¸, °¢ ÆÄÀÏ¿¡ µé¾î°¥ ³»¿ëÀº À§ÀÇ Áö½Ã´ë·Î ÁøÇàÇØ¾ß ÇÑ´Ù.
+	íŒŒì¼ì˜ ì´ë¦„ì€ ì—¬ëŸ¬ë¶„ì´ ìž„ì˜ë¡œ ì •í•´ë„ ëœë‹¤.
+	í•˜ì§€ë§Œ, ê° íŒŒì¼ì— ë“¤ì–´ê°ˆ ë‚´ìš©ì€ ìœ„ì˜ ì§€ì‹œëŒ€ë¡œ ì§„í–‰í•´ì•¼ í•œë‹¤.
 
 */
 #include <iostream>
-#include "01_¿¬½À¹®Á¦.h"
+#include "01_ì—°ìŠµë¬¸ì œ.h"	// ì§ì ‘ ë§Œë“  í—¤ë”íŒŒì¼ ë¶ˆëŸ¬ì˜¤ëŠ” ë°©ë²•
 using namespace std;
 
-// ¼Ò½ºÆÄÀÏ1
+// ì†ŒìŠ¤íŒŒì¼1
 void BestComImpl::SimpleFunc(void) {
 
-	cout << "BestComÀÌ Á¤ÀÇÇÑ ÇÔ¼ö" << endl;
+	cout << "BestComì´ ì •ì˜í•œ í•¨ìˆ˜" << endl;
 }
 
 void ProgComImpl::SimpleFunc(void) {
 
-	cout << "ProgComÀÌ Á¤ÀÇÇÑ ÇÔ¼ö" << endl;
+	cout << "ProgComì´ ì •ì˜í•œ í•¨ìˆ˜" << endl;
 }
