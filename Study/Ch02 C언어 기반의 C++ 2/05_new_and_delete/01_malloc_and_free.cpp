@@ -4,12 +4,12 @@
 내용 : malloc & free
 	C에서 사용하던 동적 메모리 할당
 */
+#define _CRT_SECURE_NO_WARNINGS		// strcpy 에러무시
 
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
 
-#define _CRT_SECURE_NO_WARNINGS		// strcpy 에러무시
 
 using namespace std;
 
