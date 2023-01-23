@@ -44,10 +44,10 @@
 */
 
 // 교재 53p 예제
+#define _CRT_SECURE_NO_WARNINings
 
 #include <iostream>
 #include <cstring>
-#define _CRT_SECURE_NO_WARNINings
 
 using namespace std;
 const int NAME_LEN = 20;
