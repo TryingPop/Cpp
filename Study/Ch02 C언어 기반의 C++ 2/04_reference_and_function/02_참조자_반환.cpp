@@ -21,6 +21,12 @@ int RefRetFuncTwo(int& ref) {
 	return ref;
 }
 
+int& RefRetFuncThree(int ref) {
+
+	ref++;
+	return ref;
+}
+
 int main(void) 
 {
 
@@ -29,7 +35,8 @@ int main(void)
 	// 참조자가 아니라서 새 주소 할당 받고 값만 받아옴
 	int num3 = RefRetFuncOne(num1);	
 	int num4 = RefRetFuncTwo(num1);
-	// int& num5 = RefRetFuncTwo(num1);
+	// int& num5 = RefRetFuncTwo(num1);		// 형식 안맞아서 참조 불가능
+	int& num6 = RefRetFuncThree(num1);		// 참조하는 변수가 금방 해제되는 지역변수라 이상한 출력 결과를 보인다
 
 	// num1 = num2 = num4 = 4, num3 = 3인 상태
 	num1++;
@@ -37,10 +44,12 @@ int main(void)
 	// 여기까지 num3과 num4는 영향 안받으므로 num3 = 3, num4 = 4
 	num3++;
 	num4++;
+	num6++;
 
 	cout << "num1 : " << num1 << endl;	// 6
 	cout << "num2 : " << num2 << endl;	// 6
 	cout << "num3 : " << num3 << endl;	// 4
 	cout << "num4 : " << num4 << endl;	// 5
+	cout << "num6 : " << num6 << endl;	// ??? 예측할 수 없는 값 출력
 	return 0;
 }
