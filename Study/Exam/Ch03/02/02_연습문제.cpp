@@ -1,14 +1,14 @@
 /*
-³¯Â¥ : 2023. 1. 26
-ÀÌ¸§ : ¹è¼ºÈÆ
-³»¿ë : ±³Àç 135p ¹®Á¦2
-	¹®ÀÚ¿­ Á¤º¸¸¦ ³»ºÎ¿¡ ÀúÀåÇÏ´Â Printer¶ó´Â ÀÌ¸§ÀÇ Å¬·¡½º¸¦ µğÀÚÀÎÇÏÀÚ.
-	ÀÌ Å¬·¡½ºÀÇ µÎ °¡Áö ±â´ÉÀº ´ÙÀ½°ú °°´Ù
-		- ¹®ÀÚ¿­ ÀúÀå
-		- ¹®ÀÚ¿­ Ãâ·Â
+ë‚ ì§œ : 2023. 1. 27
+ì´ë¦„ : ë°°ì„±í›ˆ
+ë‚´ìš© : êµì¬ 135p ë¬¸ì œ2
+	ë¬¸ìì—´ ì •ë³´ë¥¼ ë‚´ë¶€ì— ì €ì¥í•˜ëŠ” Printerë¼ëŠ” ì´ë¦„ì˜ í´ë˜ìŠ¤ë¥¼ ë””ìì¸í•˜ì.
+	ì´ í´ë˜ìŠ¤ì˜ ë‘ ê°€ì§€ ê¸°ëŠ¥ì€ ë‹¤ìŒê³¼ ê°™ë‹¤
+		- ë¬¸ìì—´ ì €ì¥
+		- ë¬¸ìì—´ ì¶œë ¥
 
-	¾Æ·¡ÀÇ main ÇÔ¼ö¿Í ½ÇÇàÀÇ ¿¹¿¡ ºÎÇÕÇÏ´Â Printer Å¬·¡½º¸¦ Á¤ÀÇÇÏµÇ,
-	ÀÌ¹ø¿¡µµ ¿ª½Ã ¸â¹öº¯¼ö´Â privateÀ¸·Î, ¸â¹öÇÔ¼ö´Â publicÀ¸·Î ¼±¾ğÇÏÀÚ.
+	ì•„ë˜ì˜ main í•¨ìˆ˜ì™€ ì‹¤í–‰ì˜ ì˜ˆì— ë¶€í•©í•˜ëŠ” Printer í´ë˜ìŠ¤ë¥¼ ì •ì˜í•˜ë˜,
+	ì´ë²ˆì—ë„ ì—­ì‹œ ë©¤ë²„ë³€ìˆ˜ëŠ” privateìœ¼ë¡œ, ë©¤ë²„í•¨ìˆ˜ëŠ” publicìœ¼ë¡œ ì„ ì–¸í•˜ì.
 	int main(void)
 	{
 		Printer pnt;
@@ -25,28 +25,39 @@
 #include <cstring>
 using namespace std;
 
-// mallocÀ» ÀÌ¿ëÇØ Á¤ÀÇÇØº¸ÀÚ
+// mallocì„ ì´ìš©í•´ ì •ì˜í•´ë³´ì
 class Printer {
 
 private:
-	// char* savedStr;
-	char savedStr[20];
+	char* savedStr;
+	bool filledStr = false;	// savedStrì´ ì±„ì›Œì ¸ ìˆëŠ”ê°€ í™•ì¸
+	// char savedStr[20];
 
 public:
 	void SetString(const char* inputStr) {
-		/*
-		// ÇØÁ¦ÇÏ´Â ÄÚµå¸¦ ¸¸µé¾î¾ß ÇÏ´Âµ¥ ¸ğ¸£°Ú´Ù
+		
+		// ê¸°ì¡´ì— savedStrì´ ìˆëŠ” ê²½ìš° ë©”ëª¨ë¦¬ì—ì„œ í•´ì œ
+		if (filledStr){
+			
+			free(savedStr);
+		}
+		// ì±„ì›Œì ¸ ìˆì§€ ì•Šì€ ê²½ìš° ì´í›„ì— ì±„ì›Œì§€ë¯€ë¡œ trueë¡œ ë³€ê²½
+		else{
+		
+			filledStr = true;
+		}
+		
 		savedStr = (char*)malloc(sizeof(inputStr));
 		strcpy(savedStr, inputStr);
-		*/
 		
+		/*
 		strcpy(savedStr, inputStr);
+		*/
 	};
 
 	void ShowString() {
 
 		cout << savedStr << endl;
-		// free(savedStr);
 	};
 };
 
