@@ -1,5 +1,5 @@
 /*
-날짜 : 2023. 1. 27
+날짜 : 2023. 1. 28
 이름 : 배성훈
 내용 : 교재 135p 문제2
 	문자열 정보를 내부에 저장하는 Printer라는 이름의 클래스를 디자인하자.
@@ -35,21 +35,25 @@ private:
 
 public:
 	void SetString(const char* inputStr) {
-		
+
 		// 기존에 savedStr이 있는 경우 메모리에서 해제
-		if (filledStr){
-			
+		if (filledStr) {
+
+
 			free(savedStr);
 		}
 		// 채워져 있지 않은 경우 이후에 채워지므로 true로 변경
-		else{
-		
+		else {
+
 			filledStr = true;
 		}
-		
-		savedStr = (char*)malloc(sizeof(inputStr));
+
+		// savedStr = (char*)malloc(sizeof(char) * strlen(inputStr));		// 위의 메모리 해제에서 에러 발생
+																			// 해제하려는 메모리가 실제 메모리랑 맞지 않아 생기는 문제
+		savedStr = (char*)malloc(sizeof(char) * (strlen(inputStr) + 1));	// 뒤에 + 1은 C에서 문자열 끝을 알려주는 \0(null 문자)이 포함되어 있기에 +1 추가
+
 		strcpy(savedStr, inputStr);
-		
+
 		/*
 		strcpy(savedStr, inputStr);
 		*/
@@ -61,7 +65,7 @@ public:
 	};
 };
 
-int main(void) 
+int main(void)
 {
 	Printer pnt;
 	pnt.SetString("Hello world!");
