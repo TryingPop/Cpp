@@ -85,5 +85,5 @@ int main(void)
 	// 모두가 같은 const변수를 이용한다
 	seller.GetPrice();	// 1000
 	fs.GetPrice();		// 1500
-	
+	return 0;
 }
