@@ -44,7 +44,8 @@ int main(void)
 	
 	sim2.ShowSimpleData();		// 값은 같다
 
-	// 그러나 주소가 다르다
+	// 그러나 포인터의 주소가 다르다
+	// 즉 포인터는 생성
 	cout << "sim1 : " << endl;
 	cout << &sim1 << endl;
 	sim1.ShowSimpleAddr();

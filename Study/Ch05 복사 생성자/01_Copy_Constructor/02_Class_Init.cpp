@@ -48,7 +48,7 @@ int main(void)
 
 	sim2.ShowSimpleData();
 
-	// 
+	// 마찬가지로 포인터의 주소는 다르다
 	cout << "sim1" << endl;
 	cout << &sim1 << endl;
 	sim1.ShowSimpleAddr();
