@@ -6,11 +6,8 @@
 */
 
 #define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <cstring>
 #include "01_Account.h"
-
-using namespace std;
+#include "07_BankingCommonDecl.h"
 
 Account::Account(int ID, const char* name, int money) 
 	: accID(ID), balance(money) {
@@ -45,10 +42,9 @@ void Account::ShowInfo() const {
 	cout << "계좌ID: " << accID << endl;
 	cout << "이  름: " << cusName << endl;
 	cout << "입금액: " << balance << endl;
-	cout << endl;
 }
 
-void Account::~Account() {
+Account::~Account() {
 
 	delete cusName;
 }

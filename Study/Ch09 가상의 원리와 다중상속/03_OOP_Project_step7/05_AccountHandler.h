@@ -16,16 +16,25 @@ class AccountHandler {
 private:
 	Account* accArr[100];
 	int accNum;
+	int choice;
 
 public:
 	AccountHandler();
 
-	void CreateAccount(Account& acc);
+	void CreateAccount();
 	void DepositMoney();
 	void WithdrawMoney();
 	void ShowAllInfo() const;
 
+	void Start();
+
+	void ShowMenu();
+	void SelectOpt();
+
 	int GetAccID(int ID);
+
+	void CreateNormal();
+	void CreateHighCredit();
 
 	~AccountHandler();
 };

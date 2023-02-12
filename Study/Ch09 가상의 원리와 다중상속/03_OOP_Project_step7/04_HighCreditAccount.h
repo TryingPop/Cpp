@@ -9,32 +9,8 @@
 #define __HIGHCREDIT_H_
 
 #define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <cstring>
 #include "03_NormalAccount.h"
-using namespace std;
-
-namespace RANK {
-	enum {A, B, C};
-
-	int GetInter(int rank) {
-
-		switch (rank) {
-
-		case 1:
-			return A;
-
-		case 2:
-			return B;
-
-		case 3:
-			return C;
-
-		default:
-			return 0;
-		}
-	}
-}
+#include "07_BankingCommonDecl.h"
 
 class HighCreditAccount : public NormalAccount {
 
@@ -44,9 +20,10 @@ private:
 public:
 	HighCreditAccount(int ID, const char* name, int money, int inter, int rank);
 
-	void Deposit(int money);
+	virtual void Deposit(int money);
 	void ShowInfo() const;
 
+	virtual int GetRank() const ;
 	int GetRankInter(int money);
 };
 
@@ -65,8 +42,27 @@ inline void HighCreditAccount::ShowInfo() const {
 	cout << "신용등급(1toA, 2toB, 3toC): " << rank << endl;
 }
 
+
+inline int HighCreditAccount::GetRank() const {
+
+	switch (rank) {
+
+	case RANK::A:
+		return 30;
+
+	case RANK::B:
+		return 20;
+
+	case RANK::C:
+		return 10;
+
+	default:
+		return 0;
+	}
+}
+
 inline int HighCreditAccount::GetRankInter(int money) {
 
-	return money * RANK::GetInter(rank);
+	return (int)(money * (GetRank() / 100.0f));
 }
 #endif

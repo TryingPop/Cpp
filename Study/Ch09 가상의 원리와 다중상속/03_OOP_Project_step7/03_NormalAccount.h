@@ -9,11 +9,8 @@
 #define __NORMAL_H_
 
 #define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
-#include <cstring>
 #include "01_Account.h"
-
-using namespace std;
+#include "07_BankingCommonDecl.h"
 
 class NormalAccount : public Account {
 
@@ -23,7 +20,7 @@ private:
 public:
 	NormalAccount(int ID, const char* name, int money, int inter);
 
-	void Deposit(int money);
+	virtual void Deposit(int money);
 	void ShowInfo() const;
 };
 
