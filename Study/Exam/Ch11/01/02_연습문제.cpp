@@ -62,8 +62,8 @@ public:
 
 	Book& operator=(const Book& ref) {
 
-		delete title;
-		delete isbn;
+		delete[] title;
+		delete[] isbn;
 
 		price = ref.price;
 		title = new char[strlen(ref.title) + 1];
@@ -113,7 +113,7 @@ public:
 	EBook& operator=(const EBook& ref) {
 
 		Book::operator=(ref);
-		delete DBMKey;
+		delete[] DBMKey;
 
 		DBMKey = new char[strlen(ref.DBMKey) + 1];
 		strcpy(DBMKey, ref.DBMKey);
