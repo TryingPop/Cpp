@@ -19,7 +19,6 @@ public:
 	NormalAccount(int ID, const char* name, int money, int rate);
 
 	void Deposit(int money);
-	void ShowInfo() const;
 };
 
 inline NormalAccount::NormalAccount(int ID, const char* name, int money, int rate)
@@ -31,9 +30,4 @@ inline void NormalAccount::Deposit(int money) {
 	Account::Deposit((int)((money * interRate) / 100.0f));	// 이자
 }
 
-inline void NormalAccount::ShowInfo() const {
-
-	Account:ShowInfo();
-	cout << "이자율: " << interRate << endl;
-} 
 #endif

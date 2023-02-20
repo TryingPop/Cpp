@@ -20,7 +20,6 @@ public:
 	HighCreditAccount(int ID, const char* name, int money, int rate, int rank);
 
 	void Deposit(int money);
-	void ShowInfo() const;
 
 	int GetRank() const;
 };
@@ -32,12 +31,6 @@ void HighCreditAccount::Deposit(int money) {
 
 	NormalAccount::Deposit(money);	// 일반 이자 + 원금
 	Account::Deposit((int)((GetRank() * money) / 100.0f));	// 신용 등급 이자
-}
-
-void HighCreditAccount::ShowInfo() const {
-
-	NormalAccount::ShowInfo();
-	cout << "신용등급(1toA, 2toB, 3toC): " << rank << endl;
 }
 
 int HighCreditAccount::GetRank() const {

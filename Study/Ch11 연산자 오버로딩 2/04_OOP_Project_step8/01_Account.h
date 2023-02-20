@@ -30,7 +30,7 @@ public:
 	void Withdraw(int money);
 
 	virtual void Deposit(int money);
-	virtual void ShowInfo() const;
+	void ShowInfo() const;
 
 	~Account();
 };
