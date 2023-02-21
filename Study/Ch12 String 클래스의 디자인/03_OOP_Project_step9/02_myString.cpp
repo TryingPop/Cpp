@@ -79,7 +79,8 @@ String String::operator+(const String& s) {
 	strcat(tempstr, s.str);
 
 	String str(tempstr);
-
+	
+	delete[] tempstr;
 	return str;
 }
 
