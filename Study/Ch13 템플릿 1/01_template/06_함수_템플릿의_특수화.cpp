@@ -15,6 +15,8 @@ T Max(T a, T b) {
 }
 
 // 문자열은 길이 비교
+// 컴파일러에게 char* 형 템플릿 함수가 필요한 경우 
+// 별도로 만들지 말고 이것을 써라는 의미
 template <>
 char* Max(char* a, char* b) {
 
