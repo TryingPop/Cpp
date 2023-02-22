@@ -9,6 +9,8 @@
 using namespace std;
 
 // template <typename T1, typename T2> 로 정의해도 된다
+// 기존에는 class로 정의되었는데 추후 typename도 추가된거
+// 실상은 class를 많이 쓴다
 template <class T1, class T2>
 void ShowData(double num) {
 
