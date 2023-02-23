@@ -70,6 +70,7 @@ String String::operator+(const String& s) {
 	strcat(tempstr, s.str);
 
 	String temp(tempstr);
+	delete[] tempstr;
 	return temp;
 }
 
