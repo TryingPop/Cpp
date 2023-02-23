@@ -72,7 +72,7 @@ bool String::operator==(const String& s) {
 
 String String::operator+(const String& s) {
 
-	char* tempstr = new char[len + s.len + 1];
+	char* tempstr = new char[len + s.len - 1];
 	strcpy(tempstr, str);
 	strcat(tempstr, s.str);
 
