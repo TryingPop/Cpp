@@ -24,6 +24,6 @@ int main(void)
 	// cout << num << endl;		// 20
 
 	float* adr = (float*)ptr;	
-	cout << *adr << endl;		// 저장된 데잍터를 float형으로 해석해서 출력한다
+	cout << *adr << endl;		// 저장된 데이터를 float형으로 해석해서 출력한다
 	return 0;
 }
