@@ -19,6 +19,6 @@ int main4(void)
 	// else cout << "is odd";
 
 	// 비트 연산
-	cout << n << " is " << ((n & 1) ? "even" : "odd");
+	cout << n << " is " << ((n & 1) ? "odd" : "even");
 	return 0;
 }
