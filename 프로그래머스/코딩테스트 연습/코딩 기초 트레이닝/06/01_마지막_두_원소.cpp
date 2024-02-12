@@ -17,7 +17,7 @@ vector<int> solution(vector<int> _num_list)
 
 	vector<int> answer;
 	int size = _num_list.size();
-	answer.reserve(4 * (size + 1));
+	answer.reserve(size + 1);
 
 	for (const auto n : _num_list)
 	{
