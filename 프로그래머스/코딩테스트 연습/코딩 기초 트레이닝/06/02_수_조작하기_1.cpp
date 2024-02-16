@@ -1,4 +1,5 @@
 #include <string>
+#include <map>
 
 /*
 날짜 : 2024. 2. 12
@@ -17,10 +18,13 @@
 	n은 -10만 ~ 10만사이의 정수
 	control의 길이는 1에서 10만 사이
 
-	주석친 코드가 해당코드보다 느리다
+	w, s, d, a를 카운팅해서 마지막에 연산하는 방법은 그냥 연산을 진행하는 것보단 느리다
 */
 
 using namespace std;
+
+// map사용
+map<char, int> m = { { 'w', 1 }, { 's', -1 }, { 'd', 10 }, { 'a', -10 } };
 
 int solution(int _n, string _control) 
 {
@@ -29,13 +33,13 @@ int solution(int _n, string _control)
 
 	answer = _n;
 
-	int calc[128];
+	// int calc[128];
 	// 프로그래머스에서 사용 안된다;
 	// memset(calc, 0, sizeof(calc));
-	calc['w'] = 1;
-	calc['s'] = -1;
-	calc['a'] = 10;
-	calc['d'] = -10;
+	// calc['w'] = 1;
+	// calc['s'] = -1;
+	// calc['a'] = 10;
+	// calc['d'] = -10;
 
 	// calc['w'] = 0;
 	// calc['s'] = 0;
@@ -46,7 +50,8 @@ int solution(int _n, string _control)
 	{
 
 		// calc[c]++;
-		answer += calc[c];
+		// answer += calc[c];
+		answer += m[c];
 	}
 
 	// answer += calc['w'];

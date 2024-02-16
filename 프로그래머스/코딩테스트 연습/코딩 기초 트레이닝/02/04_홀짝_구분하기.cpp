@@ -9,7 +9,7 @@
 
 using namespace std;
 
-int main4(void)
+int main(void)
 {
 
 	int n;
