@@ -18,7 +18,7 @@ int solution(int _n)
 
 	int answer = 0;
 
-	vector<bool> temp(_n, false);
+	vector<bool> temp(_n + 1, false);
 
 	for (int i = 2; i <= _n; i++)
 	{
