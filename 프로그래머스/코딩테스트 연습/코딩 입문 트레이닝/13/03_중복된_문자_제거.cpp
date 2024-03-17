@@ -27,7 +27,46 @@ string solution(string _my_string)
 	// 0 ~ 25 : 소문자 알파벳
 	// 26 ~ 51 : 대문자 알파벳
 	// 52 : 공백
+#if bitmasking
+
+	int min = 0;			// 소문자 확인여부 비트마스킹
+	int max = 0;			// 대문자 확인여부 비트마스킹
+	bool empty = false;		// 공백 확인여부
+
+	for (const char c : _my_string)
+	{
+
+		bool use;
+
+		if ('a' <= c && c <= 'z')
+		{
+
+			int calc = c - 'a';
+			use = (1 << calc) & min;
+			min |= (1 << calc);
+		}
+		else if ('A' <= c && c <= 'Z')
+		{
+
+			int calc = c - 'A';
+			use = (1 << calc) & max;
+			max |= (1 << calc);
+		}
+		else
+		{
+
+			use = empty;
+			empty = true;
+		}
+
+		if (use) continue;
+
+		answer.push_back(c);
+	}
+#endif
+
 	vector<bool> use(53, false);
+	
 
 	for (const char c : _my_string)
 	{
