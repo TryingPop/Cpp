@@ -41,7 +41,7 @@ vector<string> solution(vector<string> _quiz)
 		char op;
 		char equal;
 
-		bool isWrong
+		bool isWrong;
 		stringstream ss;
 		ss.str(str);
 
