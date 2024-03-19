@@ -34,6 +34,7 @@ vector<string> solution(vector<string> _quiz)
 
 #if other
 
+	stringstream ss;
 	for (const string str : _quiz)
 	{
 
@@ -42,7 +43,8 @@ vector<string> solution(vector<string> _quiz)
 		char equal;
 
 		bool isWrong;
-		stringstream ss;
+		// stringstream ss;
+		ss.clear();
 		ss.str(str);
 
 		ss >> f >> op >> b >> equal >> a;
