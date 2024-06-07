@@ -32,7 +32,7 @@ int solution(string _A, string _B)
 	{
 
 		bool find = true;
-		for (int j = 0; j < _A.size(); i++)
+		for (int j = 0; j < _A.size(); j++)
 		{
 
 			int idx = (i + j) % _A.size();
