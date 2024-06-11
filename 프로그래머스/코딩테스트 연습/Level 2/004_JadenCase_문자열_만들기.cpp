@@ -22,7 +22,6 @@
 */
 
 #include <string>
-
 using namespace std;
 
 string solution(string _s)
@@ -35,6 +34,7 @@ string solution(string _s)
 	for (char c : _s)
 	{
 
+#if first
 		if ('A' <= c && c <= 'Z')
 		{
 
@@ -53,7 +53,21 @@ string solution(string _s)
 		}
 		else if (c == ' ') isUp = true;
 		else if (isUp) isUp = false;
+#else
 
+		if (isUp)
+		{
+
+			if ('a' <= c && c <= 'z') c += 'A' - 'a';
+			if (c != ' ') isUp = false;
+		}
+		else
+		{
+
+			if ('A' <= c && c <= 'Z') c += 'a' - 'A';
+			else if (c == ' ') isUp = true;
+		}
+#endif
 		answer.push_back(c);
 	}
 
