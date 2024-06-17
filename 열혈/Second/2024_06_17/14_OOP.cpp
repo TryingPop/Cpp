@@ -109,6 +109,7 @@ void MakeAccount(void)
 
 	cout << "[계좌개설]" << endl;
 	cout << "계좌ID: "; cin >> id;
+	// cout << "이  름: "; cin >> accArr[accNum].cusName
 	cout << "이  름: "; cin >> name;
 	cout << "입금액: "; cin >> balance;
 	cout << endl;
