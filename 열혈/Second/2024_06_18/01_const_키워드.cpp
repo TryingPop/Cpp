@@ -23,7 +23,7 @@
 	int* const ptr2는 ptr2가 가리키는 대상을 상수 취급해서 ptr2의 대상을 수정할 수없다
 	하지만 ptr2가 가리키는 대상은 바꿀 수 있다
 
-	const int* ptr3은 ptr3이 가리키는 대상을 변경할 수 없다
+	const int* const ptr3은 ptr3이 가리키는 대상을 변경할 수 없다
 	그리고 ptr3가 가리키는 대상을 ptr3로는 바꿀 수 없다
 */
 
