@@ -33,11 +33,11 @@ int main(void)
 
 	int num1 = 1;
 	int num2 = RefRetFuncOne(num1);
-	int& ref2 = RefRetFuncOne(num1);
+	int& ref2 = RefRetFuncOne(num1);	// num1을 참조한다!
 	RefRetFuncOne(num1);
 
 	int num3 = RefRetFuncTwo(num1);
-	// int& ref3 = RefRetFuncTwo(num1);	// 컴파일 에러
+	// int& ref3 = RefRetFuncTwo(num1);	// 반환 값이 상수형 형태라 컴파일 에러
 	RefRetFuncTwo(num1);
 
 	num1 += 10;
@@ -48,5 +48,6 @@ int main(void)
 	cout << "num2: " << num2 << endl;	// 102
 	cout << "num3: " << num3 << endl;	// 1005
 
+	cout << "ref2: " << ref2 << endl;	// 16
 	return 0;
 }
