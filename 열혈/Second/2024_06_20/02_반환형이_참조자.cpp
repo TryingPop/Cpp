@@ -31,23 +31,27 @@ int RefRetFuncTwo(int& _ref)
 int main(void)
 {
 
-	int num1 = 1;
-	int num2 = RefRetFuncOne(num1);
-	int& ref2 = RefRetFuncOne(num1);	// num1을 참조한다!
-	RefRetFuncOne(num1);
+	int num1 = 1, num2 = 2, num3 = 3, num4 = 4, num5 = 5;
+	int ref1 = RefRetFuncOne(num1);
+	int& ref2 = RefRetFuncOne(num2);	// num2을 참조한다!
+	RefRetFuncOne(num5);
 
-	int num3 = RefRetFuncTwo(num1);
-	// int& ref3 = RefRetFuncTwo(num1);	// 반환 값이 상수형 형태라 컴파일 에러
-	RefRetFuncTwo(num1);
+	int ref3 = RefRetFuncTwo(num3);
+	// int& ref4 = RefRetFuncTwo(num4);	// 반환 값이 상수형 형태라 컴파일 에러
+	RefRetFuncTwo(num5);
 
-	num1 += 10;
-	num2 += 100;
-	num3 += 1000;
+	ref1 += 10;
+	ref2 += 20;
+	ref3 += 30;
 
-	cout << "num1: " << num1 << endl;	// 16
-	cout << "num2: " << num2 << endl;	// 102
-	cout << "num3: " << num3 << endl;	// 1005
+	cout << "ref1: " << ref1 << endl;	// 12
+	cout << "ref2: " << ref2 << endl;	// 23
+	cout << "ref3: " << ref3 << endl;	// 34
 
-	cout << "ref2: " << ref2 << endl;	// 16
+	cout << "num1: " << num1 << endl;	// 2
+	cout << "num2: " << num2 << endl;	// 23
+	cout << "num3: " << num3 << endl;	// 4
+	cout << "num4: " << num4 << endl;	// 4
+	cout << "num5: " << num5 << endl;	// 7
 	return 0;
 }
