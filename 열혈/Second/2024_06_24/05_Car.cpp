@@ -5,6 +5,7 @@
 	±³Àç 129 ~ 130
 */
 
+#define CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
 #include "04_Car.h"

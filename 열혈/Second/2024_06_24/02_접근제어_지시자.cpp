@@ -35,6 +35,7 @@
 	모든 변수와 함수는 private로 선언된다
 */
 
+#define CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
 
