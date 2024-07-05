@@ -50,7 +50,7 @@
 
 using namespace std;
 
-int DFS(int _depth, int _k, vector<vector<int>>& _arr, vector<bool>& _visit)
+int DFS(int _k, vector<vector<int>>& _arr, vector<bool>& _visit)
 {
 
 	int ret = 0;
@@ -64,7 +64,7 @@ int DFS(int _depth, int _k, vector<vector<int>>& _arr, vector<bool>& _visit)
 		if (_arr[i][0] <= _k)
 		{
 
-			int chk = DFS(_depth + 1, _k - _arr[i][1], _arr, _visit) + 1;
+			int chk = DFS(_k - _arr[i][1], _arr, _visit) + 1;
 			if (ret < chk) ret = chk;
 		}
 
