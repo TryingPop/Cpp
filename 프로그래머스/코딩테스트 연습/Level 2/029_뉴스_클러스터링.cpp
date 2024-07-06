@@ -136,8 +136,12 @@ int solution(string _str1, string _str2)
 		n += min(cnt1[i], cnt2[i]);
 	}
 
+#if first
 	if (u) answer = (int)(65'536 * ((double)(n)) / u);
 	else answer = 65'536;
+#else
 
+	answer = u ? (65'536 * n) / u : 65'536;
+#endif
 	return answer;
 }
