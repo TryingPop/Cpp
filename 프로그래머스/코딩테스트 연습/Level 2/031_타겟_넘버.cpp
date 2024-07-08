@@ -63,8 +63,35 @@ int solution(vector<int> _numbers, int _target) {
     answer = DFS(_numbers, _target);
     return answer;
 }
-#else
+#elif !second
+#include <vector>
 
+using namespace std;
+
+int solution(vector<int> _numbers, int _target)
+{
+
+    int answer = 0;
+
+    int len = 1 << _numbers.size();
+    for (int state = 0; state < len; state++)
+    {
+
+        int cur = 0;
+        for (int i = 0; i < _numbers.size(); i++)
+        {
+
+            if ((1 << i) & state) cur += _numbers[i];
+            else cur -= _numbers[i];
+        }
+
+        if (cur == _target) answer++;
+    }
+
+    return answer;
+}
+
+#else
 #include <vector>
 
 #define ADD 1'000   // 음수 부분 고려
