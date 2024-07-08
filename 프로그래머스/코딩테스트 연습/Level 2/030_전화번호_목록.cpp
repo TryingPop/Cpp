@@ -93,6 +93,7 @@ bool solution(vector<string> _phone_book)
 {
 
 	unordered_set<string> chk;
+	chk.reserve(_phone_book.size());
 	for (const string& str: _phone_book)
 	{
 
