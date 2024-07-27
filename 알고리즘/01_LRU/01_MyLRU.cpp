@@ -99,16 +99,33 @@ public:
         tail->SetPrev(head);
     }
 
+    void RegisterNode(T& _ele)
+    {
+
+        // data에 등록된 노드인지 확인
+        // 없다면 생성
+        if (data.count(_ele)) return;
+
+        Node* temp = new Node();
+        data[_ele] = temp;
+    }
+
+    void ChkLength() 
+    {
+
+        // 캐시가 가득차서 빼야하는지 확인
+        // 원래는 가득 찼는지 확인해야 하지만,
+        // linked list로 자료구조를 선정해서 뒤에 연산해도 이상없다
+        if (capacity >= len) return;
+
+        tail->GetPrev()->DisConnect();
+        len--;
+    }
 
     int AddData(T& _ele)
     {
 
-        if (!data.count(_ele))
-        {
-
-            Node* temp = new Node();
-            data[_ele] = temp;
-        }
+        RegisterNode(_ele);
 
         // 데이터 추가 확인
         int ret = CACHE_HIT;
@@ -117,17 +134,10 @@ public:
         // 캐시에 데이터가 존재
         else ret = CACHE_MISS;
 
+        // 해당 데이터 맨 앞으로
         data[_ele]->Connect(head);
 
-        // 캐시가 가득차서 빼야하는지 확인
-        // 원래는 가득 찼는지 확인해야 하지만,
-        // linked list로 자료구조를 선정해서 뒤에 연산해도 이상없다
-        if (capacity < len)
-        {
-
-            tail->GetPrev()->DisConnect();
-            len--;
-        }
+        ChkLength();
 
         // 캐시 히트인지 캐시 미스인지 반환
         return ret;
