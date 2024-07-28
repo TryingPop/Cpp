@@ -13,7 +13,7 @@
 ## 문제
   - (세 자리 수) × (세 자리 수)는 다음과 같은 과정을 통하여 이루어진다.
   
-&nbsp;&nbsp;&nbsp;abc&nbsp;................(1)
+&nbsp;&nbsp;&nbsp;&nbsp;abc&nbsp;................(1)
     
 &nbsp;x&nbsp;&nbsp;def&nbsp;................(2)
 
