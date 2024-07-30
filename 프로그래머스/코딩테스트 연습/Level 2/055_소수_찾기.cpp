@@ -33,7 +33,7 @@
 
 using namespace std;
 
-bool IsPrime(int _num)
+inline bool IsPrime(int _num)
 {
 
 	/*
@@ -53,23 +53,27 @@ bool IsPrime(int _num)
 	return true;
 }
 
-void DFS(int _depth, vector<int>& _cnt, set<int>& _use, int _num)
+inline void DFS(int _depth, vector<int>& _cnt, set<int>& _ret, set<int>& _visit, int _num)
 {
 
 	/*
 	
 	만들어진 소수를 use에 저장
 	*/
-	if (!_use.count(_num) && IsPrime(_num)) _use.insert(_num);
+
+	if (_visit.count(_num)) return;
+	_visit.insert(_num);
+
+	if (IsPrime(_num)) _ret.insert(_num);
 	if (!_depth) return;
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 9; i >= 0; i--)
 	{
 
 		if (!_cnt[i]) continue;
 		_cnt[i]--;
 
-		DFS(_depth - 1, _cnt, _use, _num * 10 + i);
+		DFS(_depth - 1, _cnt, _ret, _visit, _num * 10 + i);
 		_cnt[i]++;
 	}
 }
@@ -83,8 +87,8 @@ int solution(string _numbers)
 	*/
 	int answer = 0;
 	vector<int> cnt(10, 0);			// 숫자 개수 확인
-	set<int> use;					// 만들 수 있는 소수 모음
-
+	set<int> ret;					// 만들 수 있는 소수 모음
+	set<int> visit;					// 재방문 방지
 	int dep = _numbers.length();
 
 	for (const char c : _numbers)
@@ -93,7 +97,7 @@ int solution(string _numbers)
 		cnt[c - '0']++;
 	}
 
-	DFS(dep, cnt, use, 0);
-	answer = use.size();
+	DFS(dep, cnt, ret, visit, 0);
+	answer = ret.size();
 	return answer;
 }
