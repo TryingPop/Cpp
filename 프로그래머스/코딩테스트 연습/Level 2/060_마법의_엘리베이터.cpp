@@ -32,6 +32,10 @@
 	-10을 2번 눌러 0층으로 가는게 최소이다
 */
 
+#include <vector>
+
+using namespace std;
+#if first
 inline int DFS(int _val)
 {
 
@@ -51,14 +55,60 @@ inline int DFS(int _val)
 
 	return ret;
 }
-
+#endif
 int solution(int _storey)
 {
 
+#if first
 	/*
 	
 	브루트 포스
 	*/
 	int answer = DFS(_storey);
+#else
+
+	/*
+	
+	Greedy
+	*/
+	int answer = 0;
+
+	while (_storey)
+	{
+
+		int cur = _storey % 10;
+		_storey /= 10;
+
+		if (cur < 5)
+		{
+
+			answer += cur;
+		}
+		else if (5 < cur)
+		{
+
+			answer += 10 - cur;
+			_storey++;
+		}
+		else
+		{
+
+			answer += 5;
+			int next = _storey % 10;
+			if (next >= 5) _storey++;
+		}
+	}
+#endif
 	return answer;
+}
+
+#include <iostream>
+
+int main(void)
+{
+
+	int n;
+	cin >> n;
+
+	cout << solution(n);
 }
