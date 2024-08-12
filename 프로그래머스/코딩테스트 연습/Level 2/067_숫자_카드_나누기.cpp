@@ -42,7 +42,7 @@
 */
 
 #include <vector>
-#include <cmath>
+#include <cstdlib>
 
 using namespace std;
 
@@ -132,7 +132,7 @@ int solution(vector<int> _arrayA, vector<int> _arrayB)
 	bool chk1 = NotDivArr(_arrayB, gcdA);
 	bool chk2 = NotDivArr(_arrayA, gcdB);
 
-	if (chk1 && chk2) answer = max(gcdA, gcdB);
+	if (chk1 && chk2) answer = __max(gcdA, gcdB);
 	else if (chk1) answer = gcdA;
 	else if (chk2) answer = gcdB;
 	else answer = 0;
