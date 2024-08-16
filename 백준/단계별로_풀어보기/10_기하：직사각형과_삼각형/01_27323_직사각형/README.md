@@ -17,7 +17,8 @@
 ## 입력
     - 표준 입력에 다음과 같은 형태로 입력이 주어진다.
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;A
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;A<br>
 &nbsp;&nbsp;&nbsp;&nbsp;B
 <br/>
 
