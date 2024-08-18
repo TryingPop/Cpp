@@ -20,7 +20,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;MenOfPassion(A[], n) {<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = ⌊n / 2⌋;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return A[i]; # 코드1<br/>
-}
+&nbsp;&nbsp;&nbsp;&nbsp;}
 <br/>
 
 ## 입력
