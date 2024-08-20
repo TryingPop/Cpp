@@ -102,7 +102,7 @@ int solution(vector<vector<int>> _data, int _col, int _row_begin, int _row_end)
 		for (int num : _data[r - 1])
 		{
 
-			// bitwise XOR 연산
+			// Si 구하기
 			add += num % r;
 		}
 
