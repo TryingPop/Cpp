@@ -47,7 +47,8 @@ inline ll MySqrt(ll _r, ll _i)
 	
 	E는 부동소수점 오차
 	*/
-	return sqrt((_r * _r) - (_i * _i)) + E;
+	if (_r <= _i) return 0;
+	return sqrt((_r * _r) - (_i * _i)) + E
 }
 
 inline bool Add(ll _chk, ll _r, ll _i)
